@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">My Number</string>
+	<string name="action_settings">Settings</string>
+
+	<string name="main_welcome">Your phone number is:</string>
+	<string name="main_desc">If your number is not shown above, maybe it because:
+- Your device does not have telephony function (Wifi only devices, etc.)
+- Possibly you can set your number through phone app manually
+- Some system does not recognize own phone number (custom ROMS)
+	</string>
+	<string name="main_trysett">You may also find your number on OS-provided phone status screen:</string>
+	<string name="main_btn_sett">Phone Status</string>
+	
+</resources>

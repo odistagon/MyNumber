@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	tools:context=".AyMain" android:padding="0px" 
+	android:orientation="vertical"
+	android:background="?android:attr/colorBackground" >
+
+	<ScrollView
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="vertical" android:layout_margin="10dip" >
+
+	<LinearLayout
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:background="?android:attr/colorBackground" >
+
+	<TextView
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:text="@string/main_welcome" />
+
+	<com.odistagon.myn.FontFitTextView android:id="@+id/tv_main_test1"
+		android:layout_width="fill_parent" android:layout_height="40dip"
+		android:gravity="center_horizontal"
+		android:text="----" />
+
+	<TextView
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:text="@string/main_desc" />
+
+	</LinearLayout>
+
+	</ScrollView>
+
+	<LinearLayout
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="vertical" android:layout_margin="10dip" 
+		android:gravity="right" android:layout_alignParentBottom="true"
+		android:background="?android:attr/colorBackground" >
+
+	<TextView
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:text="@string/main_trysett" />
+
+	<Button android:id="@+id/btn_main_sett"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_marginTop="10dip" android:layout_marginBottom="10dip"
+		android:text="@string/main_btn_sett" />
+
+	</LinearLayout>
+	
+</RelativeLayout>
