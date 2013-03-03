@@ -5,9 +5,9 @@
 	<string name="action_settings">Settings</string>
 
 	<string name="main_welcome">Your phone number is:</string>
-	<string name="main_desc">If your number is not shown above, maybe it because:
-- Your device does not have telephony function (Wifi only devices, etc.)
-- Possibly you can set your number through phone app manually
+	<string name="main_desc">If your number is not shown above, maybe it because:\r\n
+- Your device does not have telephony function (Wifi only devices, etc.)\r\n
+- Possibly you can set your number through phone app manually\r\n
 - Some system does not recognize own phone number (custom ROMS)
 	</string>
 	<string name="main_trysett">You may also find your number on OS-provided phone status screen:</string>
