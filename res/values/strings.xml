@@ -12,5 +12,7 @@
 	</string>
 	<string name="main_trysett">You may also find your number on OS-provided phone status screen:</string>
 	<string name="main_btn_sett">Phone Status</string>
-	
+
+	<string name="main_msg_fail">Could not get phone number.</string>
+
 </resources>

@@ -23,8 +23,6 @@ public class FontFitTextView extends TextView
 	}
 
 	private void initialise() {
-		testPaint = new Paint();
-		testPaint.set(this.getPaint());
 		//max size defaults to the intially specified text size unless it is too small
 		maxTextSize = this.getTextSize();
 		if (maxTextSize < 11) {
@@ -36,27 +34,33 @@ public class FontFitTextView extends TextView
 	/* Re size the font so the specified text fits in the text box
 	 * assuming the text box is the specified width.
 	 */
-	private void refitText(String text, int textWidth) { 
-		if (textWidth > 0) {
-			int availableWidth = textWidth - this.getPaddingLeft() - this.getPaddingRight();
-			float trySize = maxTextSize;
+	private void refitText(String text, int nViewWidth) {
+		if (nViewWidth <= 0)
+			return;
 
-			testPaint.setTextSize(trySize);
-			while ((trySize > minTextSize) && (testPaint.measureText(text) > availableWidth)) {
-				trySize -= 1;
-				if (trySize <= minTextSize) {
-					trySize = minTextSize;
-					break;
-				}
-				testPaint.setTextSize(trySize);
+		final float	fdensity = getContext().getResources().getDisplayMetrics().density;
+		int			nAvailableWidth = nViewWidth - getPaddingLeft() - getPaddingRight();
+		float		fTrySize = maxTextSize;
+
+		Paint	p0 = getPaint();
+		p0.setTextSize(fTrySize);
+//		float	f0 = p0.measureText(text);
+		while ((fTrySize > minTextSize)
+				&& (p0.measureText(text) * fdensity > (nAvailableWidth))) {
+			fTrySize -= 1;
+			if (fTrySize <= minTextSize) {
+				fTrySize = minTextSize;
+				break;
 			}
-
-			this.setTextSize(trySize);
+			p0.setTextSize(fTrySize);
 		}
+
+		this.setTextSize(fTrySize);
 	}
 
 	@Override
-	protected void onTextChanged(final CharSequence text, final int start, final int before, final int after) {
+	protected void onTextChanged(final CharSequence text,
+			final int start, final int before, final int after) {
 		refitText(text.toString(), this.getWidth());
 	}
 
@@ -85,7 +89,6 @@ public class FontFitTextView extends TextView
 	}
 
 	//Attributes
-	private Paint testPaint;
 	private float minTextSize;
 	private float maxTextSize;
 

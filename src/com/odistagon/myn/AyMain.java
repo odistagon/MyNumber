@@ -6,7 +6,6 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.telephony.PhoneNumberUtils;
 import android.telephony.TelephonyManager;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -26,16 +25,16 @@ public class AyMain extends Activity {
 
 			sNum1 = telman.getLine1Number();
 		} catch(Exception exc) {
-			sNum1 = "Device does not have telephony functionality."
-					+ "\r\n" + exc.getMessage();
+			sNum1 = getResources().getString(R.string.main_msg_fail);
+//					+ "\r\n" + exc.getMessage();
 		}
 
 		FontFitTextView	tv0 = (FontFitTextView)findViewById(R.id.tv_main_test1);
 		String			sText = (sNum1 != null ?
-				PhoneNumberUtils.formatNumber(sNum1) : "number could not retrieved");
+				PhoneNumberUtils.formatNumber(sNum1) : "----");
 		// max text size depends on layout height of the TextView. On Android 1.6, 
 		// the height seems not to be changed after the text displayed.
-		tv0.setMaxTextSize(36);
+		tv0.setMaxTextSize(32);
 		tv0.setText(sText);
 //		tv0.setOnClickListener(new OnClickListener() {
 //			@Override
@@ -51,13 +50,6 @@ public class AyMain extends Activity {
 		btn0.setOnClickListener(new OnPhoneStateBtnListener());
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.ay_main, menu);
-		return true;
-	}
-
 	private class OnPhoneStateBtnListener implements OnClickListener {
 		@Override
 		public void onClick(View v) {
@@ -71,4 +63,11 @@ public class AyMain extends Activity {
 			}
 		}
 	}
+
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		// Inflate the menu; this adds items to the action bar if it is present.
+//		getMenuInflater().inflate(R.menu.ay_main, menu);
+//		return true;
+//	}
 }
