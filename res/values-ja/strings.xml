@@ -5,8 +5,9 @@
 	<string name="action_settings">設定</string>
 
 	<string name="main_welcome">電話番号:</string>
-	<string name="main_desc">以下の様な場合、番号が表示されないことがあります:\r\n
+	<string name="main_desc">以下のような場合、番号が表示されないことがあります:\r\n
 - 電話機能が無い (Wifi のみの機種など)\r\n
+- SIM カードがささっていない\r\n
 - 電話アプリから手動で設定する必要がある\r\n
 - 番号が取得できない (一部のカスタム ROM など)
 	</string>

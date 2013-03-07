@@ -7,6 +7,7 @@
 	<string name="main_welcome">Your phone number is:</string>
 	<string name="main_desc">If your number is not shown above, maybe it because:\r\n
 - Your device does not have telephony function (Wifi only devices, etc.)\r\n
+- No SIM card inserted\r\n
 - Possibly you can set your number through phone app manually\r\n
 - Some system does not recognize own phone number (custom ROMS)
 	</string>
